@@ -797,5 +797,10 @@ namespace Shadowsocks.View
                 tableLayoutPanel5.Visible = true;
             }
         }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            tableLayoutPanel5.Visible = false;
+        }
     }
 }

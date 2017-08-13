@@ -77,6 +77,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.MyCancelButton = new System.Windows.Forms.Button();
             this.OKButton = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureQRcode)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.ServerGroupBox.SuspendLayout();
@@ -126,7 +127,7 @@
             // 
             this.PictureQRcode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PictureQRcode.BackColor = System.Drawing.SystemColors.Control;
-            this.PictureQRcode.Location = new System.Drawing.Point(4, 165);
+            this.PictureQRcode.Location = new System.Drawing.Point(4, 150);
             this.PictureQRcode.Margin = new System.Windows.Forms.Padding(4);
             this.PictureQRcode.Name = "PictureQRcode";
             this.PictureQRcode.Size = new System.Drawing.Size(260, 200);
@@ -697,13 +698,15 @@
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.Controls.Add(this.PictureQRcode, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.CloseButton, 0, 2);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(679, 3);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(12, 3, 3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(268, 531);
             this.tableLayoutPanel5.TabIndex = 17;
             // 
@@ -752,6 +755,16 @@
             this.OKButton.Text = "OK";
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Location = new System.Drawing.Point(3, 504);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(75, 24);
+            this.CloseButton.TabIndex = 14;
+            this.CloseButton.Text = "Close";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // ConfigForm
             // 
@@ -843,6 +856,7 @@
         private System.Windows.Forms.Label labelProtocolParam;
         private System.Windows.Forms.TextBox TextProtocolParam;
         private System.Windows.Forms.CheckBox IPLabel;
+        private System.Windows.Forms.Button CloseButton;
     }
 }
 
