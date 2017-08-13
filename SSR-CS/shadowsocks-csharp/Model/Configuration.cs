@@ -385,7 +385,7 @@ namespace Shadowsocks.Model
             dnsServer = "";
 
             randomAlgorithm = (int)ServerSelectStrategy.SelectAlgorithm.LowException;
-            random = true;
+            random = false;
             sysProxyMode = (int)ProxyMode.Global;
             proxyRuleMode = (int)ProxyRuleMode.BypassLanAndChina;
 
