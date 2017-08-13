@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Net;
 
 using ZXing;
 using ZXing.Common;
@@ -265,7 +266,10 @@ namespace Shadowsocks.View
                 CreateMenuItem("Scan QRCode from screen...", new EventHandler(this.ScanQRCodeItem_Click)),
                 CreateMenuItem("Import SSR links from clipboard...", new EventHandler(this.CopyAddress_Click)),
                 new MenuItem("-"),
+                CreateMenuItem("Test network status...", new EventHandler(this.TestNetwork_Click)),
+                new MenuItem("-"),
                 CreateMenuGroup("Help", new MenuItem[] {
+                    CreateMenuItem("Open release page", new EventHandler(this.OpenReleasePage_Click)),
                     CreateMenuItem("Check update", new EventHandler(this.CheckUpdate_Click)),
                     CreateMenuItem("Show logs...", new EventHandler(this.ShowLogItem_Click)),
                     CreateMenuItem("Open wiki...", new EventHandler(this.OpenWiki_Click)),
@@ -1078,6 +1082,37 @@ namespace Shadowsocks.View
         {
             MenuItem item = (MenuItem)sender;
             controller.SelectServerIndex((int)item.Tag);
+        }
+
+        private void TestNetwork_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                WebClient WC = new WebClient();
+                WC.Credentials = CredentialCache.DefaultCredentials;
+                Byte[] DataBack = WC.DownloadData("https://raw.githubusercontent.com/Azure99/SsrBackup/master/breakwa11.github.io/stest/status.txt");
+                string STest = Encoding.UTF8.GetString(DataBack);
+                if(STest=="1")
+                {
+                    ShowBalloonTip(I18N.GetString("NetworkStatus"), I18N.GetString("Connect success!"), ToolTipIcon.Info, 10000);
+                }
+                else
+                {
+                    ShowBalloonTip(I18N.GetString("NetworkStatus"), I18N.GetString("Connect fail!"), ToolTipIcon.Info, 10000);
+                }
+
+
+            }
+            catch (WebException)
+            {
+                ShowBalloonTip(I18N.GetString("NetworkStatus"), I18N.GetString("Connect fail!"), ToolTipIcon.Info, 10000);
+            }
+
+        }
+
+        private void OpenReleasePage_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Azure99/SsrBackup/releases");
         }
 
         private void CheckUpdate_Click(object sender, EventArgs e)
