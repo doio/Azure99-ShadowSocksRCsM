@@ -784,5 +784,18 @@ namespace Shadowsocks.View
                 IPTextBox.UseSystemPasswordChar = true;
             }
         }
+
+        private void ConfigForm_Load(object sender, EventArgs e)
+        {
+            tableLayoutPanel5.Visible = false;
+        }
+
+        private void TextLink_Click(object sender, EventArgs e)
+        {
+            if(tableLayoutPanel5.Visible == false)
+            {
+                tableLayoutPanel5.Visible = true;
+            }
+        }
     }
 }
