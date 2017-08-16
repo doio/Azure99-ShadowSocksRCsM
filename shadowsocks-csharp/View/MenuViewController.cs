@@ -1112,7 +1112,7 @@ namespace Shadowsocks.View
 
         private void OpenReleasePage_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/Azure99/SsrBackup/releases");
+            System.Diagnostics.Process.Start("https://github.com/Azure99/ShadowSocksRCsM/releases");
         }
 
         private void CheckUpdate_Click(object sender, EventArgs e)

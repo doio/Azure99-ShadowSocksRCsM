@@ -74,10 +74,10 @@
             this.DownButton = new System.Windows.Forms.Button();
             this.UpButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.MyCancelButton = new System.Windows.Forms.Button();
             this.OKButton = new System.Windows.Forms.Button();
-            this.CloseButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureQRcode)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.ServerGroupBox.SuspendLayout();
@@ -134,6 +134,7 @@
             this.PictureQRcode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.PictureQRcode.TabIndex = 13;
             this.PictureQRcode.TabStop = false;
+            this.PictureQRcode.DoubleClick += new System.EventHandler(this.PictureQRcode_DoubleClick);
             // 
             // ServersListBox
             // 
@@ -350,6 +351,7 @@
             this.TextLink.TabIndex = 27;
             this.TextLink.WordWrap = false;
             this.TextLink.Click += new System.EventHandler(this.TextLink_Click);
+            this.TextLink.DoubleClick += new System.EventHandler(this.TextLink_DoubleClick);
             this.TextLink.Enter += new System.EventHandler(this.TextBox_Enter);
             this.TextLink.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseUp);
             // 
@@ -478,7 +480,9 @@
             "auth_aes128_md5",
             "auth_aes128_sha1",
             "auth_chain_a",
-            "auth_chain_b"});
+            "auth_chain_b",
+            "auth_chain_c",
+            "auth_chain_d"});
             this.TCPProtocolComboBox.Location = new System.Drawing.Point(137, 132);
             this.TCPProtocolComboBox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
             this.TCPProtocolComboBox.Name = "TCPProtocolComboBox";
@@ -709,6 +713,17 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(268, 531);
             this.tableLayoutPanel5.TabIndex = 17;
+            this.tableLayoutPanel5.Visible = false;
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Location = new System.Drawing.Point(3, 504);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(75, 24);
+            this.CloseButton.TabIndex = 14;
+            this.CloseButton.Text = "Close";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -755,16 +770,6 @@
             this.OKButton.Text = "OK";
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
-            // 
-            // CloseButton
-            // 
-            this.CloseButton.Location = new System.Drawing.Point(3, 504);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(75, 24);
-            this.CloseButton.TabIndex = 14;
-            this.CloseButton.Text = "Close";
-            this.CloseButton.UseVisualStyleBackColor = true;
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // ConfigForm
             // 

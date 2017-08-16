@@ -787,7 +787,7 @@ namespace Shadowsocks.View
 
         private void ConfigForm_Load(object sender, EventArgs e)
         {
-            tableLayoutPanel5.Visible = false;
+            
         }
 
         private void TextLink_Click(object sender, EventArgs e)
@@ -801,6 +801,16 @@ namespace Shadowsocks.View
         private void CloseButton_Click(object sender, EventArgs e)
         {
             tableLayoutPanel5.Visible = false;
+        }
+
+        private void PictureQRcode_DoubleClick(object sender, EventArgs e)
+        {
+            Clipboard.SetImage(PictureQRcode.Image);
+        }
+
+        private void TextLink_DoubleClick(object sender, EventArgs e)
+        {
+            Clipboard.SetText(TextLink.Text);
         }
     }
 }
