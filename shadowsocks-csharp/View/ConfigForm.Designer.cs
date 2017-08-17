@@ -488,6 +488,7 @@
             this.TCPProtocolComboBox.Name = "TCPProtocolComboBox";
             this.TCPProtocolComboBox.Size = new System.Drawing.Size(245, 23);
             this.TCPProtocolComboBox.TabIndex = 15;
+            this.TCPProtocolComboBox.SelectedIndexChanged += new System.EventHandler(this.TCPProtocolComboBox_SelectedIndexChanged);
             // 
             // labelObfsParam
             // 

@@ -1090,18 +1090,18 @@ namespace Shadowsocks.View
             {
                 WebClient WC = new WebClient();
                 WC.Credentials = CredentialCache.DefaultCredentials;
-                Byte[] DataBack = WC.DownloadData("https://raw.githubusercontent.com/Azure99/SsrBackup/master/breakwa11.github.io/stest/status.txt");
+                Byte[] DataBack = WC.DownloadData("http://archive.apnic.net/templates/ipv6man/");
                 string STest = Encoding.UTF8.GetString(DataBack);
-                if(STest=="1")
+                string IPAddres = STest.Substring(STest.IndexOf("var ipaddress = '") + 17, STest.IndexOf("';") - STest.IndexOf("var ipaddress = '") - 17);
+                string[] temp=IPAddres.Split('.');
+                if(temp.Length==4)
                 {
-                    ShowBalloonTip(I18N.GetString("NetworkStatus"), I18N.GetString("Connect success!"), ToolTipIcon.Info, 10000);
+                    ShowBalloonTip(I18N.GetString("NetworkStatus"), I18N.GetString("OK!IP address:"+IPAddres), ToolTipIcon.Info, 10000);
                 }
                 else
                 {
                     ShowBalloonTip(I18N.GetString("NetworkStatus"), I18N.GetString("Connect fail!"), ToolTipIcon.Info, 10000);
                 }
-
-
             }
             catch (WebException)
             {

@@ -812,5 +812,13 @@ namespace Shadowsocks.View
         {
             Clipboard.SetText(TextLink.Text);
         }
+
+        private void TCPProtocolComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(TCPProtocolComboBox.SelectedIndex>=5 && TCPProtocolComboBox.SelectedIndex<=8)
+            {
+                EncryptionSelect.Text = "none";
+            }
+        }
     }
 }

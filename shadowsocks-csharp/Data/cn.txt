@@ -244,4 +244,3 @@ Success=成功
 Please contract to breakwa11 to get more infomation=请联系Breakwa11以获得更多信息
 NetworkStatus=网络状态
 Connect fail!=连接失败!
-Connect success!=连接成功!

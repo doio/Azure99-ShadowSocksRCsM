@@ -232,4 +232,3 @@ Success=成功
 Please contract to breakwa11 to get more infomation=請聯系Breakwa11以獲取更多信息
 NetworkStatus=網絡狀態
 Connect fail!=連接失敗!
-Connect success!=連接成功!
