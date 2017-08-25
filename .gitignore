@@ -57,3 +57,4 @@ test/bin/Release/ShadowsocksR.pdb
 test/bin/Release/ShadowsocksR.exe.config
 test/bin/Release/ShadowsocksR.exe
 test/bin/Release/Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+.vs/shadowsocks-csharp/v15/sqlite3/storage.ide
