@@ -14,6 +14,12 @@ ShadowSocksR C# 魔改版 原作者Breakwa11 修改Azure99
 #
 #较原版SSRC#4.7的修改内容:
 
+V4:
+1.新增:auth_chain_c、auth_chain_d支持(来自SSRR By Akkariiin)
+2.新增:检测网络状态时会显示当前IP(通过代理),以便确定代理是否生效
+3.优化:当选择协议为auth_chain_X时，自动将加密改为none
+当无二维码时，窗口居中
+
 V3:
 1.新增:测试当前网络状态是否正常(通过代理)
 
